@@ -2,21 +2,20 @@
         <head>
             <title>Nadia'a Blog</title>
         </head>
-        <body>
-            <div>
-                <h1><a href="">Привет, меня зовут Надя!</a></h1>
-            </div>
+        <body> 
+        	<div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
 
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
             <div>
-                <p>опубликованно: 06.02.2016, 20:30</p>
-                <h2><a href="">Привет интернет!</a></h2>
-                <p>На данный момент я поняла, что программировать очень интересно и захватывающе. Весь этот мир заставляет тебя погрузиться в него головой.</p>
-            </div>
-
-            <div>
-                <p>опубликованно: 06.02.2016, 20:34</p>
-                <h2><a href="">Как твои дела?</a></h2>
-                <p>Сижу и печатаю непонятный текст. Надо делать дела и улучшать сайт.</p>
+{{ posts }}
             </div>
         </body>
     </html>
